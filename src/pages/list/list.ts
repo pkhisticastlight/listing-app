@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MapPage } from '../map/map';
+import { FilterPage } from '../filter/filter';
 /**
  * Generated class for the ListPage page.
  *
@@ -14,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'list.html',
 })
 export class ListPage {
+  list = ListPage;
+  map = MapPage;
+  filter = FilterPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

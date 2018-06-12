@@ -11,7 +11,7 @@
         <img src="../assets/imgs/menuhouse.jpeg"/>
       </ion-item>
       <button class="side-menu-gradient" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
+        <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
       </button>
       <ion-item class="side-menu-gradient">
         About Us

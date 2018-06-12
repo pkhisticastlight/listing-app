@@ -1,6 +1,9 @@
 page-list {
-    color: white;
-}
-.ion-icon{
-    color:white;
+    .icon-md {
+        color: white !important;
+    }
+    .pricing-text {
+        align-self: flex-end;
+        text-align: right;
+    }
 }
