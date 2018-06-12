@@ -1,19 +1,24 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>What I can do?</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+  <ion-content class="side-menu-gradient">
+    <ion-list class="side-menu-gradient">
+      <ion-item class="side-menu-gradient menu-image">
+        <img src="../assets/imgs/menuhouse.jpeg"/>
+      </ion-item>
+      <button class="side-menu-gradient" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
       </button>
+      <ion-item class="side-menu-gradient">
+        About Us
+      </ion-item>
     </ion-list>
   </ion-content>
 
 </ion-menu>
-
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

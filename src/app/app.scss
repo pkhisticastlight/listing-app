@@ -1,5 +1,5 @@
 // http://ionicframework.com/docs/theming/
-
+@import '../theme/variables.scss';
 
 // App Global Sass
 // --------------------------------------------------
@@ -14,3 +14,42 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.toolbar-background {
+  background-color: $primary;
+}
+.toolbar-title {
+  color:$white;
+}
+$SIDEMENU_TOP: $primary;
+$SIDEMENU_BOTTOM: $lightprimary;
+$SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+
+.side-menu-item {
+    background:none;
+    color: $white;
+    font-weight:300;
+    border:0px;
+    .item-content{
+        background:none;
+        &.activated{
+            background: $SIDEMENU_TRANSPARENCY;
+        }
+    }
+    &.active-page-highlight{
+        .item-content{
+            background: $SIDEMENU_TRANSPARENCY;
+        }
+    }
+}
+
+.side-menu-gradient{
+    color:white;
+    background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+
+.menu-image {
+  background-image: "../assets/imgs/menuhouse.jpeg";
+}
