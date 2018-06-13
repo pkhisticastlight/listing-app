@@ -22,58 +22,28 @@
 </ion-header>
 <ion-content>
 <ion-list>
-   <ion-item>
+   <ion-item *ngFor="let house of houseListing">
      <ion-card>
        <ion-grid>
         <ion-row >
           <ion-col col-7>
-            <h2><strong>535 Hewes Ct</strong></h2>
-            <h3>SAN JOSE, CA 95138</h3>
+            <h2><strong>{{house.address.addressLine1}}</strong></h2>
+            <h3>{{house.address.city}} , {{house.address.state}} {{house.address.zipCode}}</h3>
           </ion-col>
           <ion-col col-5>
-            <div class="pricing-text"><strong>$1,075,000</strong></div>
+            <div class="pricing-text"><strong>${{house.pricing.listingPrice}}</strong></div>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <img src="../assets/imgs/menuhouse.jpeg"/>
+      <img src={{house.images[0]}}/>
       <ion-card-content padding>
-        <p>BRIGHT and COZY. Beautiful 1998 built ...</p>
-        <p>  3 Beds | 2.5 Baths | 1792 Sq. Ft. </p>
+        <p>{{house.description}}</p>
+        <p>  {{house.listingDetails.beds}} Beds |  {{house.listingDetails.baths}} Baths |  {{house.listingDetails.area}} Sq. Ft. </p>
       </ion-card-content>
       <div>
         <ion-segment>
           <ion-segment-button value="kittens">
-             <ion-badge item-end color="secondary" >Sale Pending</ion-badge>
-          </ion-segment-button>
-          <ion-segment-button value="puppies">
-           <ion-badge item-end color="dark">5 Offers</ion-badge>
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-    </ion-card>
-  </ion-item>
-     <ion-item>
-     <ion-card>
-       <ion-grid>
-        <ion-row >
-          <ion-col col-7>
-            <h2><strong>7029 Via Del Rio</strong></h2>
-            <h3>SAN JOSE, CA 95138</h3>
-          </ion-col>
-          <ion-col col-5>
-            <div class="pricing-text"><strong>$969,999</strong></div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <img src="../assets/imgs/house2.jpg"/>
-      <ion-card-content padding>
-        <p>BRIGHT and COZY. Beautiful 1998 built ...</p>
-        <p>  3 Beds | 2 Baths | 1462 Sq. Ft. </p>
-      </ion-card-content>
-      <div>
-        <ion-segment>
-          <ion-segment-button value="kittens">
-             <ion-badge item-end color="secondary" >Sale Pending</ion-badge>
+             <ion-badge item-end color="secondary" > {{house.listingStatus}}</ion-badge>
           </ion-segment-button>
           <ion-segment-button value="puppies">
            <ion-badge item-end color="dark">5 Offers</ion-badge>

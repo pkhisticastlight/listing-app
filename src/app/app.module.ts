@@ -11,6 +11,7 @@ import { SalesPage } from '../pages/sales/sales';
 import { AddlistingPage } from '../pages/addlisting/addlisting';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ListingServiceProvider } from '../providers/listing-service/listing-service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ListingServiceProvider
   ]
 })
 export class AppModule {}
